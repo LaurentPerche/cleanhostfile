@@ -1,0 +1,8 @@
+#!/bin/bash
+echo Downloading hostfile from GitHub
+rm host.txt
+curl https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts > host.txt
+echo Removing Bizible
+sed -i '' '/bizible/d' ./host.txt
+echo Removing Pardot
+sed -i '' '/pardot/d' ./host.txt
